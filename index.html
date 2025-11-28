@@ -13,11 +13,11 @@
   
   <meta charset="utf-8">
   <meta name="description"
-        content="FreeGrasp: Free-form Language-based Robotic Reasoning and Grasping">
+        content="Obstruction reasoning for robotic grasping">
   <meta name="keywords" content="FreeGrasp, Language Vision Robotic Grasping">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>Free-form Language-based Robotic Reasoning and Grasping</title>
+  <title>Obstruction reasoning for robotic grasping</title>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -47,7 +47,7 @@
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
-  <link rel="icon" href="./static/images/robotic_icon.png">
+  <link rel="icon" href="./static/image/icon.png">
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -55,6 +55,58 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+<style>
+/* 通用箭头样式 */
+.swiper-btn-prev-1, .swiper-btn-next-1,
+.swiper-btn-prev-2, .swiper-btn-next-2,
+.swiper-btn-prev-3, .swiper-btn-next-3 {
+  width: 30px;
+  height: 30px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* 左箭头位置 */
+.swiper-btn-prev-1, .swiper-btn-prev-2, .swiper-btn-prev-3 {
+  left: 10px;
+}
+
+/* 右箭头位置 */
+.swiper-btn-next-1, .swiper-btn-next-2, .swiper-btn-next-3 {
+  right: 10px;
+}
+
+/* 箭头符号 */
+.swiper-btn-prev-1::after,
+.swiper-btn-prev-2::after,
+.swiper-btn-prev-3::after {
+  content: "<";
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  left: 8px;
+  top: 2px;
+}
+
+.swiper-btn-next-1::after,
+.swiper-btn-next-2::after,
+.swiper-btn-next-3::after {
+  content: ">";
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  left: 10px;
+  top: 2px;
+}
+</style>
+
+
 </head>
 <body>
 
@@ -66,19 +118,20 @@
         <div class="column has-text-centered">
           <!-- <h1 class="title is-1 publication-title">Free-form Language-based Robotic Reasoning and Grasping</h1> -->
           <h1 class="title is-1 publication-title">
-            <img src="./static/images/robotic_icon.png" alt="Robot Arm" style="width: 50px; height: auto; vertical-align: middle; margin-right: 10px;">
-            Free-form language-based robotic reasoning and grasping
+            <!-- <img src="./static/image/icon.png" alt="Robot Arm" style="width: 150px; height: auto; vertical-align: middle; margin-right: 10px;"> -->
+            Obstruction reasoning for robotic grasping
           </h1>          
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://tev.fbk.eu/team/runyu-jiao">Runyu Jiao</a><sup>1,2,†</sup>,</span>
+              <a href="https://tev.fbk.eu/team/runyu-jiao">Runyu Jiao</a><sup>1,2</sup>,
+            </span>
             <span class="author-block">
-              <a href="https://tev.fbk.eu/team/alice-fasoli">Alice Fasoli</a><sup>1,†</sup>,</span>
+              <a href="https://scholar.google.com/citations?user=aGhFCssAAAAJ&hl=en&oi=ao">Matteo Bortolon</a><sup>1</sup>,
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=EOU10lkAAAAJ&hl=en&oi=ao">Francesco Giuliari</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=aGhFCssAAAAJ&hl=en&oi=ao">Matteo Bortolon</a><sup>1,2,3</sup>,
+              <a href="https://tev.fbk.eu/team/alice-fasoli">Alice Fasoli</a><sup>1</sup>,</span>
             </span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=8u6dho8AAAAJ&hl=en&oi=ao">Sergio Povoli</a><sup>1</sup>,
@@ -94,26 +147,16 @@
             </span>
           </div>
 
-          <div class="is-size-6 has-text-centered">
-            <p><sup>†</sup> Equal Contribution</p>
-          </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Fondazione Bruno Kessler,</span>
-            <span class="author-block"><sup>2</sup>University of Trento,</span>
-            <span class="author-block"><sup>3</sup>Istituto Italiano di Tecnologia</span>
+            <span class="author-block"><sup>2</sup>University of Trento</span>
           </div>
 
           <span class="author-block">
             Acknowledgement: 
-            <img src="static/images/VRT.png" alt="Icon" class="ack-icon">
+            <img src="static/image/VRT.png" alt="Icon" class="ack-icon">
           </span>
-
-          <div class="has-text-centered" style="font-size: 1.2rem; font-weight: bold;">
-            <p>IROS 2025</p>
-            <p> & </p>
-            <p>IROS Human-aware Embodied AI (HEAI) Workshop</p>
-          </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -124,7 +167,7 @@
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper</span>
+                  <span>Paper (soon)</span>
                 </a>
               <!-- </span>
               <span class="link-block">
@@ -143,7 +186,7 @@
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
                   </span>
-                  <span>Video</span>
+                  <span>Video (soon)</span>
                 </a>
               </span>
               <!-- Code Link. -->
@@ -153,7 +196,7 @@
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (soon)</span>
                   </a>
               </span>
               <!-- Dataset Link. -->
@@ -163,7 +206,7 @@
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
-                  <span>Data</span>
+                  <span>Data (soon)</span>
                   </a>
             </div>
 
@@ -174,81 +217,103 @@
   </div>
 </section>
 
+<hr>
+
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/teaser1.png" alt="Teaser Image" style="width: 100vw; height: auto; display: block;">
-      <h2 class="subtitle" style="text-align: justify;">
-          To enable a human to command a robot using free-form language instructions, our method leverages the world knowledge of Vision-Language Models to interpret instructions and reason about object spatial relationships.
-          This is important when the target object (<span style="color: rgb(255, 230, 0); font-size: 1.3em;">&#9733;</span>) is not directly graspable, requiring the robot to first identify and remove obstructing objects 
-          (<span style="color: rgb(4, 128, 0); font-size: 0.8em;">&#128994;</span>).
-          By optimizing the sequence of actions, our approach ensures efficient task completion.
+
+      <!-- 标题 + 图标 -->
+      <h2 class="title has-text-centered tight-title">
+        <img src="static/image/icon.png" 
+             style="width: 100px; vertical-align: middle; margin-right: 8px;">
+        Not only spatial reasoning but also obstruction reasoning
       </h2>
+      <br>
+      <!-- Teaser 图片 -->
+      <img 
+        src="./static/image/teaser.jpg" 
+        alt="Teaser Image" 
+        class="zoom-on-hover"
+        style="width: 100%; height: auto;"
+      >
+
+      <!-- 图片下方的介绍文本 -->
+      <h2 class="subtitle" style="text-align: justify;">
+        UNOGrasp performs multi-step obstruction reasoning for robotic grasping in cluttered scenes. Given an RGB-D image and
+        a natural-language goal (e.g., grasp the white iphone box), UNOGrasp reasons and grounds spatial information to infer the
+        sequence of steps to unobstruct a requested object. We also introduce UNOBench to comprehensively benchmark obstruction reasoning.
+      </h2>
+
+    </div>
+  </div>
+</section>
+
+
+<hr>
+
+<section class="hero is-small" >
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Successful robotic grasping in cluttered environments not only requires a model to visually ground a target object but also to reason about obstructions that must be cleared beforehand. 
+            While current vision-language embodied reasoning models show emergent spatial understanding, they remain limited in terms of obstruction reasoning and accessibility planning.
+            To bridge this gap, we present UNOGrasp, a learning-based vision-language model capable of performing visually-grounded obstruction reasoning to infer the sequence of actions needed to <ins style="text-decoration: underline; text-decoration-color: #048000; text-decoration-thickness: 3px;">uno</ins>bstruct the path and <ins style="text-decoration: underline; text-decoration-color: #ff8c00; text-decoration-thickness: 3px;">grasp</ins> the target object.
+            We devise a novel multi-step reasoning process based on obstruction paths originated by the target object. 
+            We anchor each reasoning step with obstruction-aware visual cues to incentivize reasoning capability.
+            UNOGrasp combines supervised and reinforcement finetuning through verifiable reasoning rewards.
+            Moreover, we construct UNOBench, a large-scale dataset for both training and <ins style="text-decoration: underline; text-decoration-color: #0000ff; text-decoration-thickness: 3px;">bench</ins>marking, based on MetaGraspNetV2, with over 100k obstruction paths annotated by humans with obstruction ratios, contact points, and natural-language instructions. 
+            Extensive experiments and real-robot evaluations show that UNOGrasp significantly improves obstruction reasoning and grasp success across both synthetic and real-world environments, outperforming generalist and proprietary alternatives. 
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <hr>
 
-<section class="hero is-small" >
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Performing robotic grasping from a cluttered bin based on human instructions is a challenging task,
-             as it requires understanding both the nuances of free-form language and the spatial relationships between objects. 
-            Vision-Language Models (VLMs) trained on web-scale data, such as GPT-4o, have demonstrated remarkable reasoning capabilities across both text and images. But can they truly be used for this task in a zero-shot setting? And what are their limitations? 
-          </p>
-          <p>
-            In this paper, we explore these research questions via the free-form language-based robotic grasping task, and propose a novel method, FreeGrasp, leveraging the pre-trained VLMs’ world knowledge to reason about human instructions and object spatial arrangements. 
-          </p>
-          <p>
-            Our method detects all objects as keypoints and uses these keypoints to annotate marks on images, aiming to facilitate GPT-4o’s zero-shot spatial reasoning. This allows our method to determine whether a requested object is directly graspable or if other objects must be grasped and removed first.
-             Since no existing dataset is specifically designed for this task, we introduce a synthetic dataset FreeGraspData by extending the MetaGraspNetV2 dataset with human-annotated instructions and ground-truth grasping sequences. 
-             We conduct extensive analyses with both FreeGraspData and real-world validation with a gripper-equipped robotic arm, demonstrating state-ofthe-art performance in grasp reasoning and execution.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-</section>
-
-<!-- Method Section -->
-<section class="section">
+<!-- Benchmark Section -->
+<section class="section zoom-section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <!-- <div class="column is-full-width"> -->
       <div style="text-align: center;">
-        <h2 class="title is-3">Method</h2>
-        <img src="./static/images/blockdiagram-mage.png" alt="Architecture of FreeGrasp" />
+        <h2 class="title is-3">Benchmark: UNOBench</h2>
+        <img src="./static/image/benchmark.jpg" alt="Architecture of FreeGrasp" />
         <div class="content has-text-justified" style="margin-top: 2rem;">
           <p>
-            Our method takes as inputs: <i>(i)</i> an RGB-D image capturing the 3D scene from a top-down view, <i>(ii)</i> a free-form text instruction from the user.
-          </p>
-          <p>
-            With the RGB observation, the module first <i>localizes</i> all the objects within the container, forming a holistic understanding of the scene. Notably, the user can specify the operation area beyond the container, enhancing the method's robustness in complex scenarios.
-             Specifically, this can be achieved through the prompt Molmo.
-          </p>
-          <p>
-            To facilitate visual spatial reasoning in VLMs, we augment the visual prompt by annotating identity (ID) marks for each localized object. Then we feed the <i>mark-based visual prompt</i> to GTP-4o, which reasons about spatial relationships.
-            This reasoning process involves two key aspects: 
-            <i>(i)</i> Identifying the corresponding object ID and class name based on the user's free-form instruction. 
-            <i>(ii)</i> Determine whether the target object is obstructed and planning to remove the first graspable obstructing object.
-            GPT-4o's final output consists of the ID and class name of the next object to grasp.
-          </p>
-          <p>
-            Using the class name and coordinates of the corresponding ID, the object is segmented unambiguously. 
-            Finally, the <i>grasp estimation</i> module determines the most suitable 6-DoF grasp pose for picking the segmented object.
-          </p>
+           UNOBench features two unique characteristics: (i) human-annotated free-form language instructions about objects in cluttered
+           bins, and (ii) per-bin obstruction graphs for grounded spatial reasoning. Human annotators through the Prolific platform were involved to
+           refine the initial GPT-4o generated annotations. UNOBench features three levels of difficulty and introduces novel evaluation metrics.          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<hr>
+<!-- Method Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width"> -->
+      <div style="text-align: center;">
+        <h2 class="title is-3">Method: UNOGrasp</h2>
+        <img src="./static/image/method.jpg" alt="Architecture of FreeGrasp" class="zoom-on-hover" />
+        <div class="content has-text-justified" style="margin-top: 2rem;">
+            UNOGrasp is a VLM trained through supervised fine (SFT) on UNOBench to learn structured obstruction-path reasoning, and
+            through GRPO-based reinforcement finetuning (RFT) to further boost its reasoning ability using outcome-driven IoU and format rewards.
+            During inference, given an RGB image and a target object as language instruction, UNOGrasp reasons over multiple obstruction paths
+            (&lt;think> traces) and directly outputs the sequence of actions (&lt;answer>) required to remove obstructions and grasp the target.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <hr>
 
 <section class="hero is-light is-small"> <!-- Use 'hero' to extend background fully -->
@@ -258,9 +323,9 @@
       <!-- Paper video. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Video</h2>
+          <h2 class="title is-3">Real-world Demo(coming)</h2>
           <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/97RHsnJSDzw?si=-3skRBmPfic28s_j"
+            <iframe src=""
                     frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
@@ -273,147 +338,101 @@
 
 <hr>
 
-<!-- Occlusion Graph Section -->
+<!-- Qualitative Results Section -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div style="text-align: center;">
 
         <!-- Section Title -->
-        <h2 class="title is-3">Occlusion Graph</h2>
+        <h2 class="title is-3">Qualitative Results</h2>
 
         <!-- Description ABOVE image -->
-        <p style="font-size: 1rem; color: #444; max-width: 900px; margin: 0 auto 20px auto; text-align: left;">
-          We introduce <strong>occlusion graphs</strong> to represent spatial dependencies between objects in complex scenes.
-          The two examples below illustrate how occlusion reasoning helps robotic agents plan multi-step actions to retrieve target objects:
-          <br><br>
-          <strong>(Left) A real-world scene with a yellow duck as the goal.</strong> Objects are color-coded by difficulty (green: easy, yellow: medium, brown: hard).
-          The occlusion graph shows layer-wise dependencies, and the bottom row illustrates a sample action plan to retrieve the duck.
-          <br><br>
-          <strong>(Right) A synthetic scene from FreeGraspData,</strong> where the goal is to pick the submarine toy. Its occlusion graph captures multiple dependencies, and the step plan is shown below.
-          <br><br>
-          Directed arrows represent occlusions: A → B means A blocks B and must be removed first.
-        </p>
+<div class="caption-container">
+    <h3 class="caption-title">
+        Qualitative Results under different splits. (SR-F1 / MP_NED) scores are reported at the bottom of each image.
+    </h3>
+</div>
 
         <!-- Image -->
-        <img src="static/images/occ.png" alt="Occlusion Graph Examples" style="width: 100%; height: auto; margin-top: 10px;" />
+        <img src="static/image/obstruction_vis.png" alt="Occlusion Graph Examples" style="width: 80%; height: auto; margin-top: 10px;" />
 
       </div>
+    </div>
+  </div>
+</section>
+                
+<section class="hero is-small" style="background-color: white; padding: 20px 0;">
+  <div class="hero-body">
+    <div class="container">
+
+      <h2 class="title is-3 has-text-centered">More examples</h2>
+
+      <!-- <p class="has-text-left" style="font-size: 1rem; margin-bottom: 15px;">
+        FreeGraspData is built upon MetaGraspNetV2...
+      </p> -->
+
+      <!-- ========== ROW 1 ========== -->
+      <!-- Row 1 -->
+      <div class="swiper swiper-container swiper-row-1" style="margin-bottom: 30px;">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="static/image/1vis.jpg" /></div>
+          <div class="swiper-slide"><img src="static/image/2vis.jpg" /></div>
+          <div class="swiper-slide"><img src="static/image/3vis.jpg" /></div>
+          <div class="swiper-slide"><img src="static/image/4vis.jpg" /></div>
+        </div>
+        <div class="swiper-btn-prev-1"></div>
+        <div class="swiper-btn-next-1"></div>
+        <div class="swiper-pag-1"></div>
+      </div>
+
+
+      <!-- Row 2 -->
+      <div class="swiper swiper-container swiper-row-2" style="margin-bottom: 30px;">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="static/image/5vis.jpg" /></div>
+          <div class="swiper-slide"><img src="static/image/6vis.jpg" /></div>
+          <div class="swiper-slide"><img src="static/image/7vis.jpg" /></div>
+          <div class="swiper-slide"><img src="static/image/8vis.jpg" /></div>
+        </div>
+        <div class="swiper-btn-prev-2"></div>
+        <div class="swiper-btn-next-2"></div>
+        <div class="swiper-pag-2"></div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="swiper swiper-container swiper-row-3">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="static/image/9vis.jpg" /></div>
+          <div class="swiper-slide"><img src="static/image/10vis.jpg" /></div>
+          <div class="swiper-slide"><img src="static/image/11vis.jpg" /></div>
+          <div class="swiper-slide"><img src="static/image/12vis.jpg" /></div>
+        </div>
+        <div class="swiper-btn-prev-3"></div>
+        <div class="swiper-btn-next-3"></div>
+        <div class="swiper-pag-3"></div>
+      </div>
+
+      <!-- <p class="has-text-centered" style="font-size:0.9rem;margin-top:10px;">
+        Examples of FreeGraspData at different task difficulties...
+      </p> -->
+
     </div>
   </div>
 </section>
 
 <hr>
-                
-<!-- Grounding Image Carousel -->
-<section class="hero is-small" style="background-color: white; padding: 20px 0;">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Free-form language grasping dataset</h2>
-      
-      <!-- Instruction text -->
-      <p class="has-text-left" style="font-size: 1rem; margin-bottom: 15px;">
-        FreeGraspData is built upon MetaGraspNetV2 to evaluate robotic reasoning and grasping with free-form language instructions.
-        Grasping difficulty is categorized into six levels based on obstruction level and instance ambiguity—where ambiguity refers to scenes with multiple objects of the same category as the target, such as multiple apples when targeting one.
-      </p>
-
-      <p class="has-text-left" style="font-size: 1rem; margin-bottom: 15px;">
-        <strong>Why FreeGraspData?</strong><br>
-        Compared to existing relational grasp datasets (e.g. REGRAD) or instruction grasp detection datasets (e.g. GraspAnything), FreeGraspData offers unique challenges: 
-        <ul style="font-size: 1rem; margin-bottom: 15px; list-style-type: disc; padding-left: 20px;">
-          <li>Complex bin-picking scenarios with diverse objects, deep occlusion graphs, and random placements, making spatial reasoning highly challenging for vision-language models.</li>
-          <li>A fine-grained difficulty classification based on obstruction level and instance ambiguity, enabling better evaluation of model reasoning capabilities.</li>
-          <li>Free-form language instructions collected from human annotators, enhancing natural language understanding in grasping tasks.</li>
-        </ul>
-        
-
-      <!-- Swiper Carousel container -->
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          
-          <!-- Slide 1 -->
-          <div class="swiper-slide">
-            <img src="static/images/EwoA.png" alt="Grounding open-vocabulary object names and attributes" style="width: 60%; height: auto; display: block; margin: 10px auto;" />
-          </div>
-          
-          <!-- Slide 2 -->
-          <div class="swiper-slide">
-            <img src="static/images/EwA.png" alt="Grounding complex relations between objects" style="width: 60%; height: auto; display: block; margin: 10px auto;" />
-          </div>
-          
-          <!-- Slide 3 -->
-          <div class="swiper-slide">
-            <img src="static/images/MwoA.png" alt="Grounding user affordances with contextual semantics" style="width: 60%; height: auto; display: block; margin: 10px auto;" />
-          </div>
-
-          <!-- Slide 4 -->
-          <div class="swiper-slide">
-            <img src="static/images/MwA.png" alt="Grounding user affordances with contextual semantics" style="width: 60%; height: auto; display: block; margin: 10px auto;" />
-          </div>
-
-          <!-- Slide 5 -->
-          <div class="swiper-slide">
-            <img src="static/images/HwoA.png" alt="Grounding user affordances with contextual semantics" style="width: 60%; height: auto; display: block; margin: 10px auto;" />
-          </div>
-
-          <!-- Slide 6 -->
-          <div class="swiper-slide">
-            <img src="static/images/HwA.png" alt="Grounding user affordances with contextual semantics" style="width: 60%; height: auto; display: block; margin: 10px auto;" />
-          </div>
-
-        </div>
-        
-        <!-- Navigation Arrows -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        
-        <!-- Pagination Dots -->
-        <div class="swiper-pagination" style="position: relative; margin-top: -20px;"></div>
-      </div>
-      
-      <!-- Fixed Annotation -->
-      <p class="has-text-centered" style="font-size: 0.9rem; margin-top: 10px;">
-        Examples of FreeGraspData at different task difficulties with three user-provided instructions.<br>
-        <span style="color: rgb(255, 230, 0); font-size: 1.3em;">&#9733;</span> indicates the user-described target object, and 
-        <span style="color: rgb(4, 128, 0); font-size: 0.8em;">&#128994;</span> is/are the GT object(s) to pick.
-      </p>
-      
-    </div>
-  </div>
-</section>
 
 <!-- Swiper.js Dependency -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-<!-- Carousel Initialization -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var swiper = new Swiper(".swiper-container", {
-      loop: true,  // Infinite loop
-      autoplay: {
-        delay: 3000,  // Switch every 3 seconds
-        disableOnInteraction: false, // Continue autoplay after user interaction
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,  // Allow clicking pagination dots
-      },
-    });
-  });
-</script>
 
-<!-- Static Image Section -->
-<section class="hero is-small" style="background-color: white; padding: 20px 0;">
+<!-- <section class="hero is-small" style="background-color: white; padding: 20px 0;">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-4 has-text-centered">Real-world setup</h2> 
       
-      <!-- single image -->
       <div class="image-container">
         <img src="static/images/real-dataset.png" 
              alt="Grounding open-vocabulary object names and attributes" 
@@ -426,18 +445,18 @@
 
     </div>
   </div>
-</section>
-<!-- End Static Image Section -->
-
-<hr>
+</section> -->
 
 
+<!-- <hr> -->
 
+
+<!--
 <section class="section">
-  <div class="container" style="max-width: 100%;"> <!-- Remove max width limit -->
+  <div class="container" style="max-width: 100%;">
 
     <div class="columns is-centered">
-      <div class="column is-full has-text-centered"> <!-- Ensures full width -->
+      <div class="column is-full has-text-centered">
         <h2 class="title is-3">Example of the complete method</h2>
 
         <div class="has-text-centered">
@@ -451,6 +470,7 @@
 
   </div>
 </section>
+-->
 
 <section class="hero is-small" style="background-color: white; padding: 20px 0;">
   <div class="container" style="max-width: 80%;"> <!-- Matches previous section -->
@@ -465,16 +485,16 @@
             Many excellent works have collectively contributed to our work.
           </p>
           <p>
-            [1] <a href="https://h-freax.github.io/thinkgrasp_page/">Qian, Yaoyao, et al. "ThinkGrasp: A Vision-Language System for Strategic Part Grasping in Clutter." CoRL. 2024.</a>
+            [1] <a href="https://tev-fbk.github.io/FreeGrasp/">Jiao, Runyu, et al. "Free-form language-based robotic reasoning and grasping." IROS. 2025.</a>
           </p>
           <p>
-            [2] <a href="https://molmo.allenai.org/blog">Deitke, Matt, et al. "Molmo and pixmo: Open weights and open data for state-of-the-art multimodal models." arXiv. 2024.</a>
+            [2] <a href="https://github.com/QwenLM/Qwen3-VL">Bai, Shuai, et al. "Qwen2.5-VL Technical Report." arXiv. 2025.</a>
           </p>
           <p>
-            [3] <a href="https://openai.com/index/hello-gpt-4o/">OpenAI, “GPT-4 Technical Report.” arXiv. 2024.</a>
+            [3] <a href="https://github.com/om-ai-lab/VLM-R1">Shen, Haozhan, “VLM-R1: A Stable and Generalizable R1-style Large Vision-Language Model.” arXiv. 2025.</a>
           </p>
           <p>
-            [4] <a href="https://github.com/luca-medeiros/lang-segment-anything">L. Medeiros, “Language Segment-Anything.” [Online]. Available: https://github.com/luca-medeiros/lang-segment-anything. 2025.</a>
+            [4] <a href="https://arxiv.org/abs/2510.03342">Gemini Robotics Team, “Gemini Robotics 1.5: Pushing the Frontier of Generalist Robots with Advanced Embodied Reasoning, Thinking, and Motion Transfer.” arXiv. 2025.</a>
           </p>
           <p>
             [5] <a href="https://github.com/maximiliangilles/MetaGraspNet">Gilles, Maximilian, et al. "MetaGraspNetV2: All-in-One Dataset Enabling Fast and Reliable Robotic Bin Picking via Object Relationship Reasoning and Dexterous Grasping." TASE. 2024.</a>
@@ -491,11 +511,7 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{jiao2025free,
-  title={Free-form language-based robotic reasoning and grasping},
-  author={Jiao, Runyu and Fasoli, Alice and Giuliari, Francesco and Bortolon, Matteo and Povoli, Sergio and Mei, Guofeng and Wang, Yiming and Poiesi, Fabio},
-  journal={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  year={2025}
+    <pre><code>@article{coming soon
 }</code></pre>
   </div>
 </section>
@@ -505,7 +521,7 @@
   <div class="container">
       <div class="content has-text-centered">
           <!-- Link to Paper -->
-          <a class="icon-link" href="https://arxiv.org/pdf/2503.13082" target="_blank" title="View Paper on arXiv">
+          <a class="icon-link" href="" target="_blank" title="View Paper on arXiv">
               <i class="fas fa-file-pdf fa-2x"></i>
           </a>
           <!-- Link to GitHub -->
@@ -532,6 +548,41 @@
       </div>
   </div>
 </footer>
+
+<script>
+new Swiper('.swiper-row-1', {
+  navigation: {
+    nextEl: '.swiper-btn-next-1',
+    prevEl: '.swiper-btn-prev-1',
+  },
+  pagination: {
+    el: '.swiper-pag-1',
+    clickable: true,
+  }
+});
+
+new Swiper('.swiper-row-2', {
+  navigation: {
+    nextEl: '.swiper-btn-next-2',
+    prevEl: '.swiper-btn-prev-2',
+  },
+  pagination: {
+    el: '.swiper-pag-2',
+    clickable: true,
+  }
+});
+
+new Swiper('.swiper-row-3', {
+  navigation: {
+    nextEl: '.swiper-btn-next-3',
+    prevEl: '.swiper-btn-prev-3',
+  },
+  pagination: {
+    el: '.swiper-pag-3',
+    clickable: true,
+  }
+});
+</script>
 
 
 </body>

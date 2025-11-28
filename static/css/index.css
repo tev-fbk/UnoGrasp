@@ -17,14 +17,22 @@ body {
   font-variant: small-caps;
 }
 
-
+.hero.teaser {
+  padding-top: 0rem !important;
+  padding-bottom: 0.5rem !important;
+}
 .teaser .hero-body {
   padding-top: 0;
-  padding-bottom: 3rem;
+  padding-bottom: 0;
 }
 
-.teaser {
+/* .teaser {
   font-family: 'Google Sans', sans-serif;
+} */
+.tight-title {
+  margin-top: 0 !important;
+  margin-bottom: 0rem !important;
+  font-size: 1.6rem !important;
 }
 
 
@@ -166,3 +174,88 @@ body {
   margin-left: 5px; /* Add spacing from text */
   vertical-align: middle; /* Align properly with the text */
 }
+
+/* 1. 移除父容器的溢出隐藏（如果之前添加了的话） */
+.hero-body {
+    /* 确保图片能在父容器内自由定位 */
+    position: relative;
+    /* 移除可能导致裁剪的溢出设置 */
+    overflow: visible !important; 
+}
+
+/* 2. 定义图片的初始状态和动画过渡效果 */
+.zoom-on-hover {
+    /* 移除 HTML 中的 100vw，让 Bulma 的容器控制其基础宽度 */
+    width: 100%; 
+    height: auto;
+    display: block; 
+    
+    /* 设置动画过渡 */
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* 更流畅的动画曲线 */
+    
+    /* 初始定位和缩放 */
+    transform: scale(1);
+    transform-origin: center center; /* 确保以中心为原点缩放 */
+}
+
+/* 3. 定义鼠标悬停 (hover) 时的状态 (解决放大倍数和裁剪问题) */
+.zoom-on-hover:hover {
+    /* 增加放大倍数，例如 1.3 倍 */
+    transform: scale(1.3);
+    
+    /* 确保放大后的图片在所有其他元素之上 */
+    z-index: 999;
+    
+    /* 关键技巧：为了在放大时突破容器限制并居中，
+       我们可以将其设置为 fixed 或 absolute，但简单起见，
+       我们依靠 scale() 和 z-index 并在父容器设置相对定位。
+       如果 scale(1.3) 仍然被裁剪，尝试使用以下绝对定位技巧（但会破坏布局）：
+    */
+    /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); */ /* 可选：增加立体感 */
+}
+
+
+
+/* 三行 Swiper 的导航箭头样式（使用你实际的类名） */
+.swiper-btn-prev-1, .swiper-btn-next-1,
+.swiper-btn-prev-2, .swiper-btn-next-2,
+.swiper-btn-prev-3, .swiper-btn-next-3 {
+    top: 55% !important;
+    z-index: 10 !important;
+    color: #000 !important;
+    font-size: 25px !important;
+    position: absolute;
+}
+
+/* 确保 Swiper 容器不会裁剪箭头 */
+.swiper-container {
+    overflow: visible !important;
+}
+
+/* 缩小三行 Swiper 中每张图片到 80% */
+.swiper-row-1 img,
+.swiper-row-2 img,
+.swiper-row-3 img {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 整块区域平时的状态 */
+.zoom-section {
+  background: #ffffff;            /* 强制白色背景 */
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* 悬停状态 */
+.zoom-section:hover {
+  transform: scale(1.5);         /* 放大比例 */
+  box-shadow: 0px 15px 35px rgba(0,0,0,0.22);
+  background: #ffffff;            /* 放大后仍保持白色 */
+  z-index: 5;                     /* 确保覆盖下面的内容 */
+}
+
+
