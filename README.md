@@ -4,11 +4,12 @@ This is the repository that contains website source code for the [UNOGrasp websi
 
 If you find FreeGrasp useful for your work please cite:
 ```
-@article{jiao2025free,
-  title={Free-form language-based robotic reasoning and grasping},
-  author={Jiao, Runyu and Fasoli, Alice and Giuliari, Francesco and Bortolon, Matteo and Povoli, Sergio and Mei, Guofeng and Wang, Yiming and Poiesi, Fabio},
-  journal={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  year={2025}
+@misc{jiao2025obstruction,
+  author = {Runyu Jiao and Matteo Bortolon and Francesco Giuliari and Alice Fasoli and Sergio Povoli and Guofeng Mei and Yiming Wang and Fabio Poiesi},
+  title = {Obstruction reasoning for robotic grasping},
+  year = {2025},
+  eprint = {arXiv:2511.23186},
+  note = {arXiv preprint}
 }
 ```
 
