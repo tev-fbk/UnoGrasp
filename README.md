@@ -1,8 +1,6 @@
-# FreeGrasp: Free-form language-based robotic reasoning and grasping
+# Obstruction reasoning for robotic grasping
 
-This is the repository that contains website source code for the [FreeGrasp website](https://tev-fbk.github.io/FreeGrasp/).
-
-# FreeGrasp Code is available here: https://github.com/tev-fbk/FreeGrasp_code
+This is the repository that contains website source code for the [UNOGrasp website](https://tev-fbk.github.io/UnoGrasp/).
 
 If you find FreeGrasp useful for your work please cite:
 ```
