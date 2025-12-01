@@ -108,8 +108,35 @@
 
 
 </head>
-<body>
 
+
+
+
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div class="navbar-menu">
+            <div class="navbar-start" style="flex-grow: 1; justify-content: center">
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link"> Previous Research </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="https://tev-fbk.github.io/FreeGrasp/" target="_blank">
+                            FreeGrasp (IROS 2025)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
 <section class="hero">
   <div class="hero-body">
@@ -149,9 +176,21 @@
 
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Fondazione Bruno Kessler,</span>
-            <span class="author-block"><sup>2</sup>University of Trento</span>
+              <span class="author-block"><sup>1</sup>Fondazione Bruno Kessler,</span>
+              <span class="author-block"><sup>2</sup>University of Trento</span>
           </div>
+
+          <!-- Institution logos -->
+          <div class="has-text-centered" style="margin-top: 10px;">
+              <img src="static/image/fbk.png" 
+                  alt="FBK Logo"
+                  style="height: 58px; margin-right: 20px; vertical-align: middle;">
+
+              <img src="static/image/unitn.png" 
+                  alt="University of Trento Logo"
+                  style="height: 58px; vertical-align: middle;">
+          </div>
+
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -221,9 +260,11 @@
       <!-- 标题 + 图标 -->
       <h2 class="title has-text-centered tight-title">
         <img src="static/image/icon.png" 
-             style="width: 100px; vertical-align: middle; margin-right: 8px;">
-        Not only spatial reasoning but also obstruction reasoning
+            style="width: 100px; vertical-align: middle; margin-right: 8px;">
+        Not only <span style="color:#1e88e5;">spatial reasoning</span> 
+        but also <span style="color:#B0ACE0;">obstruction reasoning</span>
       </h2>
+
       <br>
       <!-- Teaser 图片 -->
       <img 
@@ -292,13 +333,13 @@
 
 <hr>
 <!-- Method Section -->
-<section class="section">
+<section class="section zoom-section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <!-- <div class="column is-full-width"> -->
       <div style="text-align: center;">
         <h2 class="title is-3">Method: UNOGrasp</h2>
-        <img src="./static/image/method.jpg" alt="Architecture of FreeGrasp" class="zoom-on-hover" />
+        <img src="./static/image/method.jpg" alt="Architecture of FreeGrasp" />
         <div class="content has-text-justified" style="margin-top: 2rem;">
             UNOGrasp is a VLM trained through supervised fine (SFT) on UNOBench to learn structured obstruction-path reasoning, and
             through GRPO-based reinforcement finetuning (RFT) to further boost its reasoning ability using outcome-driven IoU and format rewards.
