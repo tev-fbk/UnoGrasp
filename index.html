@@ -57,7 +57,7 @@
   <script src="./static/js/index.js"></script> -->
 
 <style>
-/* 通用箭头样式 */
+  
 .swiper-btn-prev-1, .swiper-btn-next-1,
 .swiper-btn-prev-2, .swiper-btn-next-2,
 .swiper-btn-prev-3, .swiper-btn-next-3 {
@@ -72,17 +72,14 @@
   cursor: pointer;
 }
 
-/* 左箭头位置 */
 .swiper-btn-prev-1, .swiper-btn-prev-2, .swiper-btn-prev-3 {
   left: 10px;
 }
 
-/* 右箭头位置 */
 .swiper-btn-next-1, .swiper-btn-next-2, .swiper-btn-next-3 {
   right: 10px;
 }
 
-/* 箭头符号 */
 .swiper-btn-prev-1::after,
 .swiper-btn-prev-2::after,
 .swiper-btn-prev-3::after {
@@ -191,10 +188,10 @@
                   style="height: 58px; vertical-align: middle;">
           </div>
 
-          <div class="has-text-centered" style="font-size: 1.2rem; font-weight: bold;">
+          <div class="has-text-centered" style="font-size: 2.2rem; font-weight: bold;">
             <p>CVPR 2026</p>
           </div>
-
+          
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
@@ -260,7 +257,6 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
 
-      <!-- 标题 + 图标 -->
       <h2 class="title has-text-centered tight-title">
         <img src="static/image/icon.png" 
             style="width: 100px; vertical-align: middle; margin-right: 8px;">
@@ -269,14 +265,12 @@
       </h2>
 
       <br>
-      <!-- Teaser 图片 -->
       <img 
         src="./static/image/teaser.jpg" 
         alt="Teaser Image" 
         style="width: 100%; height: auto;"
       >
 
-      <!-- 图片下方的介绍文本 -->
       <h2 class="subtitle" style="text-align: justify;">
         UNOGrasp performs multi-step obstruction reasoning for robotic grasping in cluttered scenes. Given an RGB-D image and
         a natural-language goal (e.g., grasp the white iphone box), UNOGrasp reasons and grounds spatial information to infer the
@@ -375,44 +369,58 @@
 
 <hr>
 
-<!-- Qualitative Results Section -->
+<!-- Qualitative Results Section (Two Swipers) -->
 <section class="section">
   <div class="container is-max-desktop">
 
-    <!-- Section Title -->
     <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
 
-    <!-- Two-column layout -->
     <div class="columns is-centered">
 
-      <!-- ========== Left Column ========== -->
-      <div class="column is-6 has-text-centered">
-
-        <div class="caption-container">
-          <h3 class="caption-title">
-            Qualitative Results under different splits. (SR-F1 / MP_NED) scores are reported at the bottom of each image.
-          </h3>
+      <!-- ========== Left Column Swiper ========== -->
+      <div class="column is-6">
+        <div class="has-text-centered">
+          <div class="caption-container">
+            <h3 class="caption-title">
+              Qualitative Results under different splits. (SR-F1 / MP_NED) scores are reported at the bottom of each image.
+            </h3>
+          </div>
         </div>
-        
-        <img src="static/image/obstruction_vis.png"
-             alt="Occlusion Graph Examples"
-             style="width: 100%; height: auto; margin-top: 10px;" />
 
+        <div class="swiper swiper-container swiper-qual-left" style="margin-top: 10px;">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="static/image/obstruction_vis.png" alt="Qualitative splits" style="width: 100%; height: auto;" />
+            </div>
+          </div>
+
+          <div class="swiper-btn-prev-qual-left"></div>
+          <div class="swiper-btn-next-qual-left"></div>
+          <div class="swiper-pag-qual-left"></div>
+        </div>
       </div>
 
-      <!-- ========== Right Column ========== -->
-      <div class="column is-6 has-text-centered">
-
-        <div class="caption-container">
-          <h3 class="caption-title">
-            Scenario with unseen objects. Although our model is trained on top-down views, it can effectively address novel frontal-view, suggesting its generalization potential.
-          </h3>
+      <!-- ========== Right Column Swiper ========== -->
+      <div class="column is-6">
+        <div class="has-text-centered">
+          <div class="caption-container">
+            <h3 class="caption-title">
+              Scenario with unseen objects. Although our model is trained on top-down views, it can effectively address novel frontal-view, suggesting its generalization potential.
+            </h3>
+          </div>
         </div>
 
-        <img src="static/image/front.png"
-             alt="Front-view generalization"
-             style="width: 100%; height: auto; margin-top: 10px;" />
+        <div class="swiper swiper-container swiper-qual-right" style="margin-top: 10px;">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="static/image/front.png" alt="Front-view generalization" style="width: 100%; height: auto;" />
+            </div>
+          </div>
 
+          <div class="swiper-btn-prev-qual-right"></div>
+          <div class="swiper-btn-next-qual-right"></div>
+          <div class="swiper-pag-qual-right"></div>
+        </div>
       </div>
 
     </div>
