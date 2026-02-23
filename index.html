@@ -378,23 +378,43 @@
 <!-- Qualitative Results Section -->
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div style="text-align: center;">
 
-        <!-- Section Title -->
-        <h2 class="title is-3">Qualitative Results</h2>
+    <!-- Section Title -->
+    <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
 
-        <!-- Description ABOVE image -->
-<div class="caption-container">
-    <h3 class="caption-title">
-        Qualitative Results under different splits. (SR-F1 / MP_NED) scores are reported at the bottom of each image.
-    </h3>
-</div>
+    <!-- Two-column layout -->
+    <div class="columns is-centered">
 
-        <!-- Image -->
-        <img src="static/image/obstruction_vis.png" alt="Occlusion Graph Examples" style="width: 80%; height: auto; margin-top: 10px;" />
+      <!-- ========== Left Column ========== -->
+      <div class="column is-6 has-text-centered">
+
+        <div class="caption-container">
+          <h3 class="caption-title">
+            Qualitative Results under different splits. (SR-F1 / MP_NED) scores are reported at the bottom of each image.
+          </h3>
+        </div>
+        
+        <img src="static/image/obstruction_vis.png"
+             alt="Occlusion Graph Examples"
+             style="width: 100%; height: auto; margin-top: 10px;" />
 
       </div>
+
+      <!-- ========== Right Column ========== -->
+      <div class="column is-6 has-text-centered">
+
+        <div class="caption-container">
+          <h3 class="caption-title">
+            Scenario with unseen objects. Although our model is trained on top-down views, it can effectively address novel frontal-view, suggesting its generalization potential.
+          </h3>
+        </div>
+
+        <img src="static/image/front.png"
+             alt="Front-view generalization"
+             style="width: 100%; height: auto; margin-top: 10px;" />
+
+      </div>
+
     </div>
   </div>
 </section>
