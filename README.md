@@ -66,12 +66,6 @@ pip install packaging ninja psutil wheel
 pip install -r requirement.txt --no-build-isolation
 ```
 
-The inference scripts also use the bundled Qwen-VL utility package. From the repository root, add it to `PYTHONPATH`:
-
-```bash
-export PYTHONPATH="$PWD/third_party/Qwen2.5-VL/qwen-vl-utils/src:$PYTHONPATH"
-```
-
 ## Dataset
 
 The current public release includes the synthetic benchmark only. Download [UnoBench](https://huggingface.co/datasets/rjiao/UnoBench) from Hugging Face and place the synthetic folder next to this repository as `UnoBench/UnoBenchSyn`:
