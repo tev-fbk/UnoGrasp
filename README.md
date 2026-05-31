@@ -6,16 +6,24 @@
 
 ## News
 
-- **2026-05-31:** **UnoBench dataset is released.** Download it from [Here](https://huggingface.co/datasets/FBK-TeV/UnoBench).
-- **2026-05-31:** **Small subset checkpoints are released.** Download them from the [Here](https://huggingface.co/collections/rjiao/unograsp).
+- **2026-05-31:** **UnoBench dataset is released.** Download it from [Hugging Face](https://huggingface.co/datasets/FBK-TeV/UnoBench).
+- **2026-05-31:** **Small subset checkpoints are released.** Download them from [Hugging Face](https://huggingface.co/collections/rjiao/unograsp).
 
 </div>
 
-Official repository for **UnoGrasp: Obstruction Reasoning for Robotic Grasping**.
+Official repository for the public release of **UnoGrasp: Obstruction Reasoning for Robotic Grasping**.
 
-This release supports reproduction and example evaluation for the CVPR 2026 paper and ECCV 2026 Workshop Challenge. It includes inference scripts, evaluation scripts, released checkpoints for the UnoBench small split, and links to the released UnoBench dataset. Training code will be made available after the ECCV 2026 Challenge.
+This branch contains the method code for reproducing UnoGrasp inference and evaluation on the released UnoBench small split. It includes inference scripts, evaluation scripts, and links to the released checkpoints and dataset. Training code will be made available after the ECCV 2026 Workshop Challenge.
 
-**Links:** [Project Page](https://tev-fbk.github.io/UnoGrasp/) | [Paper](https://arxiv.org/pdf/2511.23186) | [Video](https://www.youtube.com/watch?v=i2SRak0pS7M) | [Challenge](https://github.com/tev-fbk/UnoGrasp/tree/challenge) | [UnoBench Dataset](https://huggingface.co/datasets/FBK-TeV/UnoBench)
+## Resources
+
+| Resource | Link | Description |
+| --- | --- | --- |
+| Project page | [tev-fbk.github.io/UnoGrasp](https://tev-fbk.github.io/UnoGrasp/) | Overview, paper, video, and release links. |
+| Paper | [arXiv](https://arxiv.org/pdf/2511.23186) | CVPR 2026 paper. |
+| Video | [YouTube](https://www.youtube.com/watch?v=i2SRak0pS7M) | Project video. |
+| Challenge starter kit | [GitHub challenge branch](https://github.com/tev-fbk/UnoGrasp/tree/challenge) | Minimal runnable example and local evaluators for the UnoBench Challenge. |
+| UnoBench dataset | [Hugging Face](https://huggingface.co/datasets/FBK-TeV/UnoBench) | Released dataset files, small split, challenge queries, and metadata. |
 
 <p align="center">
   <img src="images/teaser.png" alt="UnoGrasp teaser" />
@@ -23,12 +31,12 @@ This release supports reproduction and example evaluation for the CVPR 2026 pape
 
 ## Overview
 
-UnoGrasp studies robotic grasp planning with occlusion reasoning. Given a single scene image and a language instruction, the model predicts whether the target object can be grasped directly or which object should be removed first.
+UnoGrasp studies target-centric obstruction reasoning for robotic grasping. Given a scene image and a target object, the model predicts whether the target can be grasped directly or which object should be removed first.
 
-The repository supports two reasoning settings:
+This code supports the two UnoBench settings used in the paper:
 
 - **SoM reasoning:** target and occluding objects are represented by object IDs.
-- **NLP reasoning:** target and occluding objects are represented by natural-language object descriptions and image coordinates.
+- **NLP reasoning:** target and occluding objects are represented by natural-language descriptions and image coordinates.
 
 <p align="center">
   <img src="images/method.png" alt="UnoGrasp method" />
@@ -59,7 +67,7 @@ Install PyTorch following the official command for your CUDA version. This relea
 pip install torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cu124
 ```
 
-Install the build helpers needed by packages such as `flash_attn`, then install the remaining dependencies from the repository requirements file:
+Install the build helpers needed by packages such as `flash_attn`, then install the remaining dependencies:
 
 ```bash
 pip install packaging ninja psutil wheel
@@ -68,7 +76,7 @@ pip install -r requirement.txt --no-build-isolation
 
 ## Dataset
 
-The current public release includes the synthetic benchmark only. Download [UnoBench](https://huggingface.co/datasets/FBK-TeV/UnoBench) from Hugging Face and place the synthetic folder next to this repository as `UnoBench/UnoBenchSyn`:
+This repository expects the released synthetic UnoBench files to be placed next to the code as `UnoBench/UnoBenchSyn`:
 
 ```text
 Uno_CVPR/
@@ -77,7 +85,7 @@ Uno_CVPR/
 `-- UnoGrasp/
 ```
 
-The files used by this repository are:
+Download UnoBench from [Hugging Face](https://huggingface.co/datasets/FBK-TeV/UnoBench). The files used by this repository are:
 
 ```text
 ../UnoBench/UnoBenchSyn/test_som_small.jsonl
@@ -86,13 +94,15 @@ The files used by this repository are:
 ../UnoBench/UnoBenchSyn/annotations/
 ```
 
-The full dataset split used in the paper and the released synthetic split are shown below. The real-world set and paper test ground truth are not included in this public release.
+See the [UnoBench dataset README](../UnoBench/UnoBenchSyn/README.md) for the full file structure, download commands, and metadata description.
+
+The full paper split and the released synthetic split are shown below. The real-world set and paper test ground truth are not included in this public release.
 
 <p align="center">
   <img src="images/data_split.png" width="450" alt="UnoBench data split" />
 </p>
 
-For internal comparisons, use the released synthetic small split. For official challenge evaluation, train on the released data and submit predictions to the challenge leaderboard when available.
+For method reproduction, use the released synthetic small split. For official challenge evaluation, use the challenge branch and submit predictions to the leaderboard when available.
 
 ## Checkpoints
 
@@ -180,6 +190,7 @@ The evaluation scripts report success-rate metrics, occlusion-reasoning metrics,
 ## Results
 
 UnoGrasp is trained and tested on the full set. UnoGrasp (small) is trained and tested on the small subset. Overall is the group-weighted average SR-F1 over No-Occ, Easy, Medium, and Hard, as used for the challenge.
+
 <p align="center">
   <img src="images/results.png" width="1000" alt="UnoGrasp results" />
 </p>
