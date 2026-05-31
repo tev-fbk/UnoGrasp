@@ -15,7 +15,7 @@ Official repository for **UnoGrasp: Obstruction Reasoning for Robotic Grasping**
 
 This release supports reproduction and example evaluation for the CVPR 2026 paper and ECCV 2026 Workshop Challenge. It includes inference scripts, evaluation scripts, released checkpoints for the UnoBench small split, and links to the released UnoBench dataset. Training code will be made available after the ECCV 2026 Challenge.
 
-**Links:** [Project Page](https://tev-fbk.github.io/UnoGrasp/) | [Paper](https://arxiv.org/pdf/2511.23186) | [Video](https://www.youtube.com/watch?v=i2SRak0pS7M) | [Challenge](https://github.com/tev-fbk/UnoGrasp/tree/challenge) | [UnoBench Dataset](https://huggingface.co/datasets/rjiao/UnoBench)
+**Links:** [Project Page](https://tev-fbk.github.io/UnoGrasp/) | [Paper](https://arxiv.org/pdf/2511.23186) | [Video](https://www.youtube.com/watch?v=i2SRak0pS7M) | [Challenge](https://github.com/tev-fbk/UnoGrasp/tree/challenge) | [UnoBench Dataset](https://huggingface.co/datasets/FBK-TeV/UnoBench)
 
 <p align="center">
   <img src="images/teaser.png" alt="UnoGrasp teaser" />
@@ -74,7 +74,7 @@ The current public release includes the synthetic benchmark only. Download [UnoB
 Uno_CVPR/
 |-- UnoBench/
 |   `-- UnoBenchSyn/
-`-- UnoGrasp_open/
+`-- UnoGrasp/
 ```
 
 The files used by this repository are:
@@ -104,7 +104,7 @@ Download the released Hugging Face checkpoints and place them under `checkpoints
 Expected layout:
 
 ```text
-UnoGrasp_open/
+UnoGrasp/
 `-- checkpoints/
     |-- UnoGrasp-Ratio-RL-IoU-som-small/
     `-- UnoGrasp-Ratio-RL-IoU-nlp-small/
