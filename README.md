@@ -198,10 +198,10 @@ This repository is released under the **CC BY-NC 4.0 license**. It may be used f
 If you find this repository useful, please cite:
 
 ```bibtex
-@article{jiao2025obstruction,
-  title = {Obstruction reasoning for robotic grasping},
+@inproceedings{jiao2026obstruction,
+  title = {Obstruction Reasoning for Robotic Grasping},
   author = {Runyu Jiao and Matteo Bortolon and Francesco Giuliari and Alice Fasoli and Sergio Povoli and Guofeng Mei and Yiming Wang and Fabio Poiesi},
-  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year = {2026}
 }
 ```
