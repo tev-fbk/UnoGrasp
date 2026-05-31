@@ -6,7 +6,7 @@
 
 ## News
 
-- **2026-05-31:** **UnoBench dataset is released.** Download it from [Here](https://huggingface.co/datasets/rjiao/UnoBench).
+- **2026-05-31:** **UnoBench dataset is released.** Download it from [Here](https://huggingface.co/datasets/FBK-TeV/UnoBench).
 - **2026-05-31:** **Small subset checkpoints are released.** Download them from the [Here](https://huggingface.co/collections/rjiao/unograsp).
 
 </div>
@@ -15,7 +15,7 @@ Official repository for **UnoGrasp: Obstruction Reasoning for Robotic Grasping**
 
 This release supports reproduction and example evaluation for the CVPR 2026 paper and ECCV 2026 Workshop Challenge. It includes inference scripts, evaluation scripts, released checkpoints for the UnoBench small split, and links to the released UnoBench dataset. Training code will be made available after the ECCV 2026 Challenge.
 
-**Links:** [Project Page](https://tev-fbk.github.io/UnoGrasp/) | [Paper](https://arxiv.org/pdf/2511.23186) | [Video](https://www.youtube.com/watch?v=i2SRak0pS7M) | [Challenge](https://github.com/Ryan7180/UnoBench_Challenge) | [UnoBench Dataset](https://huggingface.co/datasets/rjiao/UnoBench)
+**Links:** [Project Page](https://tev-fbk.github.io/UnoGrasp/) | [Paper](https://arxiv.org/pdf/2511.23186) | [Video](https://www.youtube.com/watch?v=i2SRak0pS7M) | [Challenge](https://github.com/tev-fbk/UnoGrasp/tree/challenge) | [UnoBench Dataset](https://huggingface.co/datasets/rjiao/UnoBench)
 
 <p align="center">
   <img src="images/teaser.png" alt="UnoGrasp teaser" />
@@ -68,7 +68,7 @@ pip install -r requirement.txt --no-build-isolation
 
 ## Dataset
 
-The current public release includes the synthetic benchmark only. Download [UnoBench](https://huggingface.co/datasets/rjiao/UnoBench) from Hugging Face and place the synthetic folder next to this repository as `UnoBench/UnoBenchSyn`:
+The current public release includes the synthetic benchmark only. Download [UnoBench](https://huggingface.co/datasets/FBK-TeV/UnoBench) from Hugging Face and place the synthetic folder next to this repository as `UnoBench/UnoBenchSyn`:
 
 ```text
 Uno_CVPR/
@@ -98,8 +98,8 @@ For internal comparisons, use the released synthetic small split. For official c
 
 Download the released Hugging Face checkpoints and place them under `checkpoints/`:
 
-- [UnoGrasp-Ratio-RL-IoU-som-small](https://huggingface.co/rjiao/UnoGrasp-Ratio-RL-IoU-som-small)
-- [UnoGrasp-Ratio-RL-IoU-nlp-small](https://huggingface.co/rjiao/UnoGrasp-Ratio-RL-IoU-nlp-small)
+- [UnoGrasp-Ratio-RL-IoU-som-small](https://huggingface.co/FBK-TeV/UnoGrasp-Ratio-RL-IoU-som-small)
+- [UnoGrasp-Ratio-RL-IoU-nlp-small](https://huggingface.co/FBK-TeV/UnoGrasp-Ratio-RL-IoU-nlp-small)
 
 Expected layout:
 
