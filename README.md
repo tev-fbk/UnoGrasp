@@ -4,8 +4,8 @@
 
 ## News
 
-- **2026-05-31:** **UnoBench dataset is released.** Download it from [Hugging Face](https://huggingface.co/datasets/rjiao/UnoBench).
-- **2026-05-31:** **Small subset checkpoints are released.** Download them from the [UnoGrasp Hugging Face collection](https://huggingface.co/collections/rjiao/unograsp).
+- **2026-05-31:** **UnoBench dataset is released.** Download it from [Here](https://huggingface.co/datasets/rjiao/UnoBench).
+- **2026-05-31:** **Small subset checkpoints are released.** Download them from the [Here](https://huggingface.co/collections/rjiao/unograsp).
 
 Official repository for **UnoGrasp: Obstruction Reasoning for Robotic Grasping**.
 
