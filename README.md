@@ -2,10 +2,14 @@
 
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
+<div style="border: 1px solid #d0d7de; border-radius: 8px; padding: 12px 16px; margin: 16px 0; background-color: #f6f8fa;">
+
 ## News
 
-- **2026-05-31:** **UnoBench dataset is released.** Download it from [Here](https://huggingface.co/datasets/rjiao/UnoBench).
-- **2026-05-31:** **Small subset checkpoints are released.** Download them from the [Here](https://huggingface.co/collections/rjiao/unograsp).
+- **2026-05-31:** **UnoBench dataset is released.** Download it from [Hugging Face](https://huggingface.co/datasets/rjiao/UnoBench).
+- **2026-05-31:** **Small subset checkpoints are released.** Download them from the [UnoGrasp Hugging Face collection](https://huggingface.co/collections/rjiao/unograsp).
+
+</div>
 
 Official repository for **UnoGrasp: Obstruction Reasoning for Robotic Grasping**.
 
