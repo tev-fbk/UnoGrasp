@@ -25,9 +25,9 @@ This branch contains the method code for reproducing UnoGrasp inference and eval
 | Challenge starter kit | [GitHub challenge branch](https://github.com/tev-fbk/UnoGrasp/tree/challenge) | Minimal runnable example and local evaluators for the UnoBench Challenge. |
 | UnoBench dataset | [Hugging Face](https://huggingface.co/datasets/FBK-TeV/UnoBench) | Released dataset files, small split, challenge queries, and metadata. |
 
-<p align="center">
+<!-- <p align="center">
   <img src="images/teaser.png" alt="UnoGrasp teaser" />
-</p>
+</p> -->
 
 ## Overview
 
