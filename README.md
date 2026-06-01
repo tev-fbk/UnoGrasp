@@ -4,12 +4,11 @@ This is the repository that contains website source code for the [UNOGrasp websi
 
 If you find FreeGrasp useful for your work please cite:
 ```
-@misc{jiao2025obstruction,
+@inproceedings{jiao2026obstruction,
+  title = {Obstruction Reasoning for Robotic Grasping},
   author = {Runyu Jiao and Matteo Bortolon and Francesco Giuliari and Alice Fasoli and Sergio Povoli and Guofeng Mei and Yiming Wang and Fabio Poiesi},
-  title = {Obstruction reasoning for robotic grasping},
-  year = {2025},
-  eprint = {arXiv:2511.23186},
-  note = {arXiv preprint}
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year = {2026}
 }
 ```
 
