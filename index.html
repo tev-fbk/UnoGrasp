@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="9f55e120-3e25-41ae-bfeb-361a726c0a09" type="text/javascript" async></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JNN7F7HDFD"></script>
@@ -13,24 +13,12 @@
   
   <meta charset="utf-8">
   <meta name="description"
-        content="Obstruction reasoning for robotic grasping">
-  <meta name="keywords" content="FreeGrasp, Language Vision Robotic Grasping">
+        content="UNOGrasp: obstruction reasoning for robotic grasping in cluttered scenes.">
+  <meta name="keywords" content="UNOGrasp, UNOBench, obstruction reasoning, vision-language robotic grasping">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>Obstruction reasoning for robotic grasping</title>
+  <title>UNOGrasp: Obstruction reasoning for robotic grasping</title>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      setTimeout(function () {
-        bulmaCarousel.attach('#results-carousel', {
-          slidesToScroll: 1,
-          slidesToShow: 1,
-          infinite: true,
-          autoplay: true
-        });
-      }, 500);
-    });
-  </script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <!-- Google tag (gtag.js) -->
@@ -40,21 +28,13 @@
         rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
   <link rel="icon" href="./static/image/icon.png">
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <!-- <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script> -->
 
 <style>
   
@@ -113,14 +93,14 @@
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="main-navbar-menu">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
 
-        <div class="navbar-menu">
+        <div id="main-navbar-menu" class="navbar-menu">
             <div class="navbar-start" style="flex-grow: 1; justify-content: center">
 
                 <div class="navbar-item has-dropdown is-hoverable">
@@ -135,7 +115,7 @@
         </div>
     </nav>
 
-<section class="hero">
+<section class="hero publication-header">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -151,11 +131,12 @@
             </span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=aGhFCssAAAAJ&hl=en&oi=ao">Matteo Bortolon</a><sup>1</sup>,
+            </span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=EOU10lkAAAAJ&hl=en&oi=ao">Francesco Giuliari</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://tev.fbk.eu/team/alice-fasoli">Alice Fasoli</a><sup>1</sup>,</span>
+              <a href="https://tev.fbk.eu/team/alice-fasoli">Alice Fasoli</a><sup>1</sup>,
             </span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=8u6dho8AAAAJ&hl=en&oi=ao">Sergio Povoli</a><sup>1</sup>,
@@ -181,10 +162,12 @@
           <div class="has-text-centered" style="margin-top: 10px;">
               <img src="static/image/fbk.png" 
                   alt="FBK Logo"
+                  decoding="async"
                   style="height: 58px; margin-right: 20px; vertical-align: middle;">
 
               <img src="static/image/unitn.png" 
                   alt="University of Trento Logo"
+                  decoding="async"
                   style="height: 58px; vertical-align: middle;">
           </div>
 
@@ -192,7 +175,7 @@
             <p>CVPR 2026</p>
           </div>
           
-          <div class="column has-text-centered">
+          <div class="column has-text-centered publication-actions">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
@@ -203,6 +186,7 @@
                   </span>
                   <span>Paper</span>
                 </a>
+              </span>
               <!-- </span>
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2503.13082"
@@ -252,6 +236,17 @@
                   </span>
                   <span>Data</span>
                   </a>
+              </span>
+              <!-- Challenge Link. -->
+              <span class="link-block challenge-link-block">
+                <a href="https://github.com/tev-fbk/UnoGrasp/tree/challenge"
+                   class="external-link button is-normal is-rounded is-dark challenge-button">
+                  <span class="icon">
+                      <i class="fas fa-trophy"></i>
+                  </span>
+                  <span>ECCV Workshop Challenge</span>
+                  </a>
+              </span>
             </div>
 
           </div>
@@ -269,6 +264,7 @@
 
       <h2 class="title has-text-centered tight-title">
         <img src="static/image/icon.png" 
+            alt=""
             style="width: 100px; vertical-align: middle; margin-right: 8px;">
         Not only <span style="color:#1e88e5;">spatial reasoning</span> 
         but also <span style="color:#B0ACE0;">obstruction reasoning</span>
@@ -278,6 +274,8 @@
       <img 
         src="./static/image/teaser.jpg" 
         alt="Teaser Image" 
+        decoding="async"
+        fetchpriority="high"
         style="width: 100%; height: auto;"
       >
 
@@ -319,13 +317,13 @@
 <hr>
 
 <!-- Benchmark Section -->
-<section class="Section">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <!-- <div class="column is-full-width"> -->
       <div style="text-align: center;">
         <h2 class="title is-3">Benchmark: UNOBench</h2>
-        <img src="./static/image/benchmark.jpg" alt="Architecture of FreeGrasp" />
+        <img src="./static/image/benchmark.jpg" alt="UNOBench dataset and benchmark overview" loading="lazy" decoding="async" />
         <div class="content has-text-justified" style="margin-top: 2rem;">
           <p>
            UNOBench features two unique characteristics: (i) human-annotated free-form language instructions about objects in cluttered
@@ -345,9 +343,9 @@
       <!-- <div class="column is-full-width"> -->
       <div style="text-align: center;">
         <h2 class="title is-3">Method: UNOGrasp</h2>
-        <img src="./static/image/method.jpg" alt="Architecture of FreeGrasp" />
+        <img src="./static/image/method.jpg" alt="UNOGrasp method overview" loading="lazy" decoding="async" />
         <div class="content has-text-justified" style="margin-top: 2rem;">
-            UNOGrasp is a VLM trained through supervised fine (SFT) on UNOBench to learn structured obstruction-path reasoning, and
+            UNOGrasp is a VLM trained through supervised fine-tuning (SFT) on UNOBench to learn structured obstruction-path reasoning, and
             through GRPO-based reinforcement finetuning (RFT) to further boost its reasoning ability using outcome-driven IoU and format rewards.
             During inference, given an RGB image and a target object as language instruction, UNOGrasp reasons over multiple obstruction paths
             (&lt;think> traces) and directly outputs the sequence of actions (&lt;answer>) required to remove obstructions and grasp the target.
@@ -367,7 +365,7 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Video</h2>
           <div class="publication-video">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/i2SRak0pS7M?si=snVrr2d5m-uS5Je9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/i2SRak0pS7M?si=snVrr2d5m-uS5Je9" title="YouTube video player" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -400,7 +398,7 @@
         <div class="swiper swiper-container swiper-qual-left" style="margin-top: 10px;">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="static/image/obstruction_vis.png" alt="Qualitative splits" style="width: 100%; height: auto;" />
+              <img src="static/image/obstruction_vis.png" alt="Qualitative results across UNOBench splits" loading="lazy" decoding="async" style="width: 100%; height: auto;" />
             </div>
           </div>
 
@@ -415,7 +413,7 @@
         <div class="has-text-centered">
           <div class="caption-container">
             <h3 class="caption-title">
-              Scenario with unseen objects. Although our model is trained on top-down views, it can effectively address novel frontal-view, suggesting its generalization potential.
+              Scenario with unseen objects. Although our model is trained on top-down views, it can effectively address novel frontal views, suggesting its generalization potential.
             </h3>
           </div>
         </div>
@@ -423,7 +421,7 @@
         <div class="swiper swiper-container swiper-qual-right" style="margin-top: 10px;">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="static/image/front.png" alt="Front-view generalization" style="width: 100%; height: auto;" />
+              <img src="static/image/front.png" alt="Front-view generalization with unseen objects" loading="lazy" decoding="async" style="width: 100%; height: auto;" />
             </div>
           </div>
 
@@ -451,10 +449,10 @@
       <!-- Row 1 -->
       <div class="swiper swiper-container swiper-row-1" style="margin-bottom: 30px;">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="static/image/1vis.jpg" /></div>
-          <div class="swiper-slide"><img src="static/image/2vis.jpg" /></div>
-          <div class="swiper-slide"><img src="static/image/3vis.jpg" /></div>
-          <div class="swiper-slide"><img src="static/image/4vis.jpg" /></div>
+          <div class="swiper-slide"><img src="static/image/1vis.jpg" alt="UNOGrasp example 1" loading="lazy" decoding="async" /></div>
+          <div class="swiper-slide"><img src="static/image/2vis.jpg" alt="UNOGrasp example 2" loading="lazy" decoding="async" /></div>
+          <div class="swiper-slide"><img src="static/image/3vis.jpg" alt="UNOGrasp example 3" loading="lazy" decoding="async" /></div>
+          <div class="swiper-slide"><img src="static/image/4vis.jpg" alt="UNOGrasp example 4" loading="lazy" decoding="async" /></div>
         </div>
         <div class="swiper-btn-prev-1"></div>
         <div class="swiper-btn-next-1"></div>
@@ -465,10 +463,10 @@
       <!-- Row 2 -->
       <div class="swiper swiper-container swiper-row-2" style="margin-bottom: 30px;">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="static/image/5vis.jpg" /></div>
-          <div class="swiper-slide"><img src="static/image/6vis.jpg" /></div>
-          <div class="swiper-slide"><img src="static/image/7vis.jpg" /></div>
-          <div class="swiper-slide"><img src="static/image/8vis.jpg" /></div>
+          <div class="swiper-slide"><img src="static/image/5vis.jpg" alt="UNOGrasp example 5" loading="lazy" decoding="async" /></div>
+          <div class="swiper-slide"><img src="static/image/6vis.jpg" alt="UNOGrasp example 6" loading="lazy" decoding="async" /></div>
+          <div class="swiper-slide"><img src="static/image/7vis.jpg" alt="UNOGrasp example 7" loading="lazy" decoding="async" /></div>
+          <div class="swiper-slide"><img src="static/image/8vis.jpg" alt="UNOGrasp example 8" loading="lazy" decoding="async" /></div>
         </div>
         <div class="swiper-btn-prev-2"></div>
         <div class="swiper-btn-next-2"></div>
@@ -478,10 +476,10 @@
       <!-- Row 3 -->
       <div class="swiper swiper-container swiper-row-3">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="static/image/9vis.jpg" /></div>
-          <div class="swiper-slide"><img src="static/image/10vis.jpg" /></div>
-          <div class="swiper-slide"><img src="static/image/11vis.jpg" /></div>
-          <div class="swiper-slide"><img src="static/image/12vis.jpg" /></div>
+          <div class="swiper-slide"><img src="static/image/9vis.jpg" alt="UNOGrasp example 9" loading="lazy" decoding="async" /></div>
+          <div class="swiper-slide"><img src="static/image/10vis.jpg" alt="UNOGrasp example 10" loading="lazy" decoding="async" /></div>
+          <div class="swiper-slide"><img src="static/image/11vis.jpg" alt="UNOGrasp example 11" loading="lazy" decoding="async" /></div>
+          <div class="swiper-slide"><img src="static/image/12vis.jpg" alt="UNOGrasp example 12" loading="lazy" decoding="async" /></div>
         </div>
         <div class="swiper-btn-prev-3"></div>
         <div class="swiper-btn-next-3"></div>
@@ -548,14 +546,14 @@
 -->
 
 <section class="hero is-small" style="background-color: white; padding: 20px 0;">
-  <div class="container" style="max-width: 80%;"> <!-- Matches previous section -->
+  <div class="container related-links-container">
 
     <!-- Related Links Section -->
     <div class="columns is-centered">
       <div class="column is-full has-text-left"> <!-- Full width & centered text -->
         <h2 class="title is-3">Related links</h2>
 
-        <div class="content has-text-left" style="margin: 0 auto; max-width: 80%;">
+        <div class="content has-text-left related-links-content">
           <p>
             Many excellent works have collectively contributed to our work.
           </p>
@@ -604,7 +602,7 @@
               <i class="fas fa-file-pdf fa-2x"></i>
           </a>
           <!-- Link to GitHub -->
-          <a class="icon-link" class="external-link" href="" target="_blank"
+          <a class="icon-link external-link" href="https://github.com/tev-fbk/UnoGrasp" target="_blank"
              title="View Project on GitHub">
               <i class="fab fa-github fa-2x"></i>
           </a>
@@ -629,36 +627,41 @@
 </footer>
 
 <script>
-new Swiper('.swiper-row-1', {
-  navigation: {
-    nextEl: '.swiper-btn-next-1',
-    prevEl: '.swiper-btn-prev-1',
-  },
-  pagination: {
-    el: '.swiper-pag-1',
-    clickable: true,
-  }
-});
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('a[target="_blank"]').forEach(function (link) {
+    var relValues = new Set((link.getAttribute('rel') || '').split(/\s+/).filter(Boolean));
+    relValues.add('noopener');
+    relValues.add('noreferrer');
+    link.setAttribute('rel', Array.from(relValues).join(' '));
+  });
 
-new Swiper('.swiper-row-2', {
-  navigation: {
-    nextEl: '.swiper-btn-next-2',
-    prevEl: '.swiper-btn-prev-2',
-  },
-  pagination: {
-    el: '.swiper-pag-2',
-    clickable: true,
+  var burger = document.querySelector('.navbar-burger');
+  var menu = burger ? document.getElementById(burger.dataset.target) : null;
+  if (burger && menu) {
+    burger.addEventListener('click', function () {
+      var isActive = burger.classList.toggle('is-active');
+      menu.classList.toggle('is-active', isActive);
+      burger.setAttribute('aria-expanded', String(isActive));
+    });
   }
-});
 
-new Swiper('.swiper-row-3', {
-  navigation: {
-    nextEl: '.swiper-btn-next-3',
-    prevEl: '.swiper-btn-prev-3',
-  },
-  pagination: {
-    el: '.swiper-pag-3',
-    clickable: true,
+  if (window.Swiper) {
+    [
+      ['.swiper-row-1', '.swiper-btn-next-1', '.swiper-btn-prev-1', '.swiper-pag-1'],
+      ['.swiper-row-2', '.swiper-btn-next-2', '.swiper-btn-prev-2', '.swiper-pag-2'],
+      ['.swiper-row-3', '.swiper-btn-next-3', '.swiper-btn-prev-3', '.swiper-pag-3']
+    ].forEach(function (config) {
+      new Swiper(config[0], {
+        navigation: {
+          nextEl: config[1],
+          prevEl: config[2]
+        },
+        pagination: {
+          el: config[3],
+          clickable: true
+        }
+      });
+    });
   }
 });
 </script>
