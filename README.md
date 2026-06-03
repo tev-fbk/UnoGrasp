@@ -22,7 +22,7 @@ This branch contains the method code for reproducing UnoGrasp inference and eval
 | Project page | [tev-fbk.github.io/UnoGrasp](https://tev-fbk.github.io/UnoGrasp/) | Overview, paper, video, and release links. |
 | Paper | [arXiv](https://arxiv.org/pdf/2511.23186) | CVPR 2026 paper. |
 | Video | [YouTube](https://www.youtube.com/watch?v=i2SRak0pS7M) | Project video. |
-| Challenge starter kit | [GitHub challenge branch](https://github.com/tev-fbk/UnoGrasp/tree/challenge) | Minimal runnable example and local evaluators for the UnoBench Challenge. |
+| Challenge starter kit | [GitHub challenge branch](https://github.com/tev-fbk/unobenchchallenge/tree/master) | Minimal runnable example and local evaluators for the UnoBench Challenge. |
 | UnoBench dataset | [Hugging Face](https://huggingface.co/datasets/FBK-TeV/UnoBench) | Released dataset files, small split, challenge queries, and metadata. |
 
 <!-- <p align="center">
