@@ -210,19 +210,19 @@ If you find this repository useful, please cite:
 
 ```bibtex
 @inproceedings{jiao2026obstruction,
-  title = {Obstruction Reasoning for Robotic Grasping},
-  author = {Runyu Jiao and Matteo Bortolon and Francesco Giuliari and Alice Fasoli and Sergio Povoli and Guofeng Mei and Yiming Wang and Fabio Poiesi},
-  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year = {2026}
+  title={Obstruction reasoning for robotic grasping},
+  author={Jiao, Runyu and Bortolon, Matteo and Giuliari, Francesco and Fasoli, Alice and Povoli, Sergio and Mei, Guofeng and Wang, Yiming and Poiesi, Fabio},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2026}
 }
 ```
 
 ```bibtex
-@article{jiao2025free,
-  title = {Free-form language-based robotic reasoning and grasping},
-  author = {Jiao, Runyu and Fasoli, Alice and Giuliari, Francesco and Bortolon, Matteo and Povoli, Sergio and Mei, Guofeng and Wang, Yiming and Poiesi, Fabio},
-  journal = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  year = {2025}
+@inproceedings{jiao2025free,
+  title={Free-form language-based robotic reasoning and grasping},
+  author={Jiao, Runyu and Fasoli, Alice and Giuliari, Francesco and Bortolon, Matteo and Povoli, Sergio and Mei, Guofeng and Wang, Yiming and Poiesi, Fabio},
+  booktitle={2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year={2025},
 }
 ```
 
