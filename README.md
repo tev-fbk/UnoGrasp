@@ -46,6 +46,7 @@ This code supports the two UnoBench settings used in the paper:
 
 - [Installation](#installation)
 - [Dataset](#dataset)
+- [VQA Dataset Prompt Generation](#vqa-dataset-prompt-generation)
 - [Checkpoints](#checkpoints)
 - [Quick Start](#quick-start)
 - [Inference](#inference)
@@ -103,6 +104,10 @@ The full paper split and the released synthetic split are shown below. The real-
 </p>
 
 For method reproduction, use the released synthetic small split. For official challenge evaluation, use the challenge branch and submit predictions to the leaderboard when available.
+
+## VQA Dataset Prompt Generation
+
+We provide [a prompt-generation script](data_gen/data_gen_som_occ.py) for generating VQA-style data from UnoBench metadata, including human instruction prompts and the UnoGrasp system prompt for occlusion-aware reasoning.
 
 ## Checkpoints
 
